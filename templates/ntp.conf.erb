@@ -1,0 +1,9 @@
+restrict default nomodify notrap nopeer noquery
+restrict 127.0.0.1
+restrict ::1
+<% @servers.each do |server| -%>
+  <%= server %>
+<% end -%>
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
